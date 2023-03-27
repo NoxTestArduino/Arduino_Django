@@ -1,0 +1,230 @@
+body {
+   font-family: Arial, sans-serif;
+   background-color: #f2f2f2;
+   margin: 0;
+   padding: 0;
+}
+
+
+.wrapper {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin: 50px auto;
+   max-width: 1000px;
+}
+
+
+.wrapper a {
+   text-decoration: none;
+}
+
+
+.sensor {
+   position: relative;
+   border: 1px solid #ccc;
+   background-color: #fff;
+   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+   padding: 20px;
+   margin-right: 20px;
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   transition: all 0.3s ease-in-out;
+   width: 300px;
+   border-radius: 10px;
+}
+
+
+.sensor:hover {
+   transform: scale(1.05);
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+}
+
+
+.sensor h2 {
+   font-size: 28px;
+   font-weight: bold;
+   margin: 0;
+   margin-bottom: 10px;
+   color: #444;
+}
+
+
+.sensor p {
+   font-size: 45px;
+   margin: 0;
+   color: #777;
+   min-width: 80px;
+}
+
+
+
+
+.sensor button {
+   background-color: #444;
+   color: #fff;
+   font-size: 24px;
+   font-weight: bold;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   position: absolute;
+   bottom: 20px;
+   left: 50%;
+   transform: translateX(-50%);
+   transition: all 0.3s ease-in-out;
+}
+
+
+.sensor button:hover {
+   background-color: #fff;
+   color: #444;
+   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+   transform: translate(-50%, -5%) scale(1.1);
+}
+
+
+.sensor.temperature {
+   border: 0px;
+   border-left: 10px solid #ff6464;
+}
+
+
+.sensor.humidity {
+   border: 0px;
+   border-left: 10px solid #006eff;
+}
+
+
+.sensor.co2 {
+   border: 0px;
+   border-left: 10px solid #ffe21e;
+}
+
+
+.sensor.tvoc {
+   border: 0px;
+   border-left: 10px solid #909090;
+}
+
+
+canvas {
+ border: none;
+}
+
+
+.chart-container {
+ position: relative;
+ margin: auto;
+ height: 700px;
+ width: 80vw;
+}
+
+
+/* Меню бокового бара */
+.sidebar {
+   height: 100%;
+   width: 55px;
+   position: fixed;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   background-color: #f2f2f2;
+   color: #444;
+   overflow-x: hidden;
+   padding-top: 60px;
+   transition: 1s;
+   font-family: Arial, sans-serif;
+   box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.1); /* добавляем тень справа */
+}
+
+.sidebar #aboutUs {
+   padding: 8px 8px 8px 32px;
+   text-decoration: none;
+   font-size: 25px;
+   color: #444;
+   display: none;
+   transition: 0.4s;
+   cursor: pointer;
+}
+
+.sidebar #aboutUs:hover {
+   color: #006eff;
+}
+
+.sidebar #openCloseBtn {
+   padding: 8px 8px 8px 32px;
+   text-decoration: none;
+   font-size: 27px;
+   color: #444;
+   display: block;
+   transition: 0.4s;
+   position: absolute;
+   top: 10px;
+   right: 7px;
+   margin-left: 50px;
+   cursor: pointer;
+}
+
+.sidebar #openCloseBtn:hover {
+   color: #4191fa;
+}
+
+#tempForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#tempForm label {
+  margin-top: 10px;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 5px;
+}
+
+#tempForm input {
+  width: 80%;
+  height: 35px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 16px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 28px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.apply-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  color: #777;
+  border: none;
+  border-radius: 13px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+
+.apply-button:hover {
+   transform: scale(1.05);
+   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+}
+
+
+

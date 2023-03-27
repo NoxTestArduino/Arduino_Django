@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Sensors</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'main/css/style.css' %}">
+   <script src="{% static 'main/js/main.js' %}"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+   <div class="wrapper">
+       <a href="#temperature">
+           <button class="sensor temperature" onclick="change_graph('temperature');">
+               <h2>Temperature</h2>
+               <p id="temperature-value">0°C</p>
+           </button>
+       </a>
+       <a href="#humidity">
+           <button class="sensor humidity" onclick="change_graph('humidity');">
+               <h2>Humidity</h2>
+               <p id="humidity-value">0%</p>
+           </button>
+       </a>
+       <a href="#co2">
+           <button class="sensor co2" onclick="change_graph('co2');">
+               <h2>CO2</h2>
+               <p id="co2-value">0 ppm</p>
+           </button>
+       </a>
+       <a href="#tvoc">
+           <button class="sensor tvoc" onclick="change_graph('tvoc');">
+               <h2>TVOC</h2>
+               <p id="tvoc-value">0 ppb</p>
+           </button>
+       </a>
+   </div>
+
+
+   <div class="chart-container">
+       <canvas id="myChart"></canvas>
+   </div>
+
+
+   <div id="mySidebar" class="sidebar">
+       <a id="openCloseBtn" class="openCloseBtn" onclick="openNav()">☰</a>
+
+       <div id="tempForm">
+           <label for="min-temp">Minimum value:</label>
+           <input type="number" id="min-temp" name="min-temp" step="any" placeholder="Enter minimum value">
+
+           <label for="max-temp">Maximum value:</label>
+           <input type="number" id="max-temp" name="max-temp" step="any" placeholder="Enter maximum value">
+
+           <button class="apply-button" onclick="post_max_min()">Apply</button>
+       </div>
+   </div>
+</body>
+</html>
